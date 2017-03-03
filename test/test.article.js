@@ -46,4 +46,20 @@ describe('UnitTest Start .. ', function() {
 		});
 	});
 
+	describe('add_group', function() {
+		it ('return true', function() {
+			co(function* () {
+				yield	article.add_group(5, ["JavaScript", "HTML"]);
+			})
+		});
+	});
+
+	describe('remove_group', function() {
+		it ('return true', function() {
+			co(function* () {
+				yield	article.remove_group(5, ["HTML"]);
+			})
+		});
+	});
+
 })

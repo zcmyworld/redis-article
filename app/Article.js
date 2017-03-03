@@ -95,7 +95,7 @@ class Article {
 			article_data['id'] = id;
 			articles.push(article_data);
 		}
-		
+
 		return articles
 	}
 
@@ -132,6 +132,20 @@ class Article {
 
 		// 文章赞数增加
 		yield this.RedisClient.hincrbyAsync(article, 'votes', 1);
+	}
+
+	* add_group(articleId, to_add = []) {
+		let article = `article:${articleId}`;
+		for (let i in to_add) {
+			yield this.RedisClient.saddAsync(`group:${to_add[i]}`, article);
+		}
+	}
+
+	* remove_group(articleId, to_remove = []) {
+		let article = `article:${articleId}`;
+		for (let i in to_remove) {
+			yield this.RedisClient.sremAsync(`group:${to_remove[i]}`, article);
+		}
 	}
 
 	/**
