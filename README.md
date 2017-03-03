@@ -1,5 +1,7 @@
 # 一个基于 Redis 的文章点赞系统
 
-# 《Redis in action》 源代码 JavaScript 版
+#### -《Redis in action》 源代码 JavaScript 版
 
-# 喜欢优雅的代码？我也喜欢，使用 co 来让异步变的更优雅
+# 特性
+#### - 喜欢优雅的代码？我也喜欢，使用 co 来让异步变的更优雅
+#### - ~~喜欢优雅为什么还要用JS?（求别黑~~
